@@ -8,9 +8,9 @@ import { Location } from '../interfaces/location';
 	providedIn: 'root',
 })
 export class GetWeatherData {
-	apiKey: string = 'ce3bd9b235b547529a22161ec85fd1ef';
+	apiKey: string = '3b8e327f3c034c3082026732c70fe049';
 	apiUrl: string = 'https://api.weatherbit.io/v2.0/';
-	lang: string = 'pl';
+	lang: string = 'en';
 	target!: string;
 	urlParams!: HttpParams;
 

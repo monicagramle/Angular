@@ -8,6 +8,6 @@ export interface CurrentWeatherData {
 	windSpeed?: number;
 	visibility?: number;
 	tempreture?: number;
-	perceivedTempreture: number;
+	perceivedTemperature: number;
 	icon?: string;
 }

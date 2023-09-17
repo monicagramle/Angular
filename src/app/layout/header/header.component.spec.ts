@@ -23,7 +23,7 @@ describe('HeaderComponent', () => {
 	it('should render page title', () => {
 		const headerName =
 			fixture.debugElement.nativeElement.querySelector('.header__name');
-		expect(headerName.textContent).toEqual('Sprawdź pogodę');
+		expect(headerName.textContent).toEqual('WeatherLog');
 	});
 	it('should set image logotype path as expected', () => {
 		const img = fixture.debugElement.nativeElement.querySelector('img');

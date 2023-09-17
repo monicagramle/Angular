@@ -73,7 +73,7 @@ describe('WeatherComponent', () => {
 
 	it('should render geolocation button text', () => {
 		const geoLoc = element.nativeElement.querySelector('.geolocation__btn');
-		expect(geoLoc.textContent).toContain('Zlokalizuj mnie');
+		expect(geoLoc.textContent).toContain('Locate Me');
 	});
 
 	it('should render geolocation icon', () => {

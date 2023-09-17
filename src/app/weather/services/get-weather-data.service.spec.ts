@@ -44,9 +44,9 @@ describe('GetWeatherDataService', () => {
 		expect(reqApi.request.method).toEqual('GET');
 		expect(reqApi.request.params.get('city')).toEqual(location.city);
 		expect(reqApi.request.params.get('key')).toEqual(
-			'ce3bd9b235b547529a22161ec85fd1ef'
+			'3b8e327f3c034c3082026732c70fe049'
 		);
-		expect(reqApi.request.params.get('lang')).toEqual('pl');
+		expect(reqApi.request.params.get('lang')).toEqual('en');
 		reqApi.flush(expectedData);
 	});
 
@@ -70,9 +70,9 @@ describe('GetWeatherDataService', () => {
 			location.longitude.toString()
 		);
 		expect(reqApi.request.params.get('key')).toEqual(
-			'ce3bd9b235b547529a22161ec85fd1ef'
+			'3b8e327f3c034c3082026732c70fe049'
 		);
-		expect(reqApi.request.params.get('lang')).toEqual('pl');
+		expect(reqApi.request.params.get('lang')).toEqual('en');
 		reqApi.flush(expectedData);
 	});
 
@@ -90,9 +90,9 @@ describe('GetWeatherDataService', () => {
 		expect(reqApi.request.method).toEqual('GET');
 		expect(reqApi.request.params.get('city')).toEqual(location.city);
 		expect(reqApi.request.params.get('key')).toEqual(
-			'ce3bd9b235b547529a22161ec85fd1ef'
+			'3b8e327f3c034c3082026732c70fe049'
 		);
-		expect(reqApi.request.params.get('lang')).toEqual('pl');
+		expect(reqApi.request.params.get('lang')).toEqual('en');
 		reqApi.flush(expectedData);
 	});
 
@@ -115,9 +115,9 @@ describe('GetWeatherDataService', () => {
 			location.longitude.toString()
 		);
 		expect(reqApi.request.params.get('key')).toEqual(
-			'ce3bd9b235b547529a22161ec85fd1ef'
+			'3b8e327f3c034c3082026732c70fe049'
 		);
-		expect(reqApi.request.params.get('lang')).toEqual('pl');
+		expect(reqApi.request.params.get('lang')).toEqual('en');
 		reqApi.flush(expectedData);
 	});
 

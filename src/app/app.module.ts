@@ -10,6 +10,7 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { WeatherComponent } from './weather/weather.component';
 import { PreloaderComponent } from './components/preloader/preloader.component';
 import { InterceptorService } from './components/preloader/services/interceptor.service';
+import { NumericValidatorDirective } from './numeric-validator.directive';
 
 @NgModule({
 	declarations: [
@@ -19,6 +20,7 @@ import { InterceptorService } from './components/preloader/services/interceptor.
 		FooterComponent,
 		WeatherComponent,
 		PreloaderComponent,
+  NumericValidatorDirective,
 	],
 	imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
 	providers: [

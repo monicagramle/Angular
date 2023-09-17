@@ -3,5 +3,6 @@ export interface Errors {
 	noData: string;
 	serverErr: string;
 	geolocationErr: string;
+	noContent: string;
 	default: string;
 }

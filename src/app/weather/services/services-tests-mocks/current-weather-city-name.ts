@@ -16,7 +16,7 @@ export const currrentWeatherDataCityMock: CurrentWeatherAPI = {
 			state_code: '77',
 			city_name: 'Kraków',
 			wind_spd: 0.778576,
-			wind_cdir_full: 'północWest',
+			wind_cdir_full: 'Northwest',
 			wind_cdir: 'PNZ',
 			slp: 1021.48,
 			vis: 5,
@@ -36,7 +36,7 @@ export const currrentWeatherDataCityMock: CurrentWeatherAPI = {
 			weather: {
 				icon: 'c02n',
 				code: 802,
-				description: 'Rozproszone chmury',
+				description: 'Scattered clouds',
 			},
 			datetime: '2022-03-02:21',
 			temp: 0.4,

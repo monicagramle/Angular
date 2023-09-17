@@ -251,6 +251,36 @@
 	}
 }
 
+ .slide {
+	animation: slide 5s ease-in-out infinite;
+	transform-box: fill-box;
+	transform-origin: center;
+  }
+
+@keyframes slide {
+    from {
+        transform: translateX(-20%); /* Start off the screen to the left */
+    }
+    to {
+        transform: translateX(0); /* Slide in to its original position */
+    }
+}
+
+.rotate {
+	animation: rotate 5s ease-in-out infinite;
+	transform-box: fill-box;
+	transform-origin: center;
+  }
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg); /* Start off the screen to the left */
+    }
+    to {
+        transform: rotate(360deg); /* Slide in to its original position */
+    }
+}
+
 .forecast {
 	width: 100%;
 	padding: 1rem;
@@ -258,6 +288,7 @@
 	background-color: $secondaryColorLight;
 	font-weight: $fontBold;
 	text-align: center;
+	border-radius: 10px;
 
 	@include desktopUp {
 		margin-bottom: auto;
@@ -326,6 +357,8 @@
 	height: 50vh;
 	background: url('../../assets/images/city.svg') no-repeat top center;
 	background-size: cover;
+	border-radius: 10px;
+    margin-top: 10px;
 
 	@include desktopUp {
 		grid-area: 1 / 6 / 2 / 11;
@@ -411,6 +444,7 @@
 	height: 100%;
 	background-color: $secondaryColorLight;
 	padding: 2rem 1rem;
+	border-radius: 10px;
 
 	@include desktopUp {
 		padding: 2rem 1rem;

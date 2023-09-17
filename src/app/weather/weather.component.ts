@@ -31,7 +31,7 @@ export class WeatherComponent implements OnDestroy {
 		windSpeed: 0,
 		visibility: 0,
 		tempreture: 0,
-		perceivedTempreture: 0,
+		perceivedTemperature: 0,
 		icon: '',
 	};
 	forecastWeather: any = {};
@@ -40,6 +40,8 @@ export class WeatherComponent implements OnDestroy {
 	errorShowClass!: string;
 	error!: string;
 	dataSubscription: Subscription = new Subscription();
+	iconClass: string = 'slide';
+	isClear: boolean = true;
 
 	constructor(
 		private data: GetWeatherData,
@@ -92,19 +94,22 @@ export class WeatherComponent implements OnDestroy {
 				if (response) {
 					this.errorShowClass = '';
 					this.error = '';
-					const data = response.current.data[0];
-					this.currentWeather.city = data.city_name;
-					this.currentWeather.sunrise = data.sunrise;
-					this.currentWeather.sunset = data.sunset;
-					this.currentWeather.description = data.weather.description;
-					this.currentWeather.pressure = data.pres;
-					this.currentWeather.humidity = data.rh;
-					this.currentWeather.windSpeed = data.wind_spd;
-					this.currentWeather.visibility = data.vis;
-					this.currentWeather.tempreture = data.temp;
-					this.currentWeather.perceivedTempreture = data.app_temp;
-					this.currentWeather.icon = `${this.iconsURL}${data.weather.icon}.svg`;
-					this.forecastWeather = response.forecast;
+
+					const data = response.current?.data[0];
+					const count = response.current?.count;
+						this.currentWeather.city = data.city_name;
+						this.currentWeather.sunrise = data.sunrise;
+						this.currentWeather.sunset = data.sunset;
+						this.currentWeather.description = data.weather?.description; // Use optional chaining
+						this.currentWeather.pressure = data.pres;
+						this.currentWeather.humidity = data.rh;
+						this.currentWeather.windSpeed = data.wind_spd;
+						this.currentWeather.visibility = data.vis;
+						this.currentWeather.tempreture = data.temp;
+						this.currentWeather.perceivedTemperature = data.app_temp;
+						this.currentWeather.icon = `${this.iconsURL}${data.weather?.icon}.svg`; // Use optional chaining
+						this.forecastWeather = response.forecast;
+						this.isClear = data.weather?.icon === 800; // Use strict equality (===) for comparison
 				} else {
 					this.errorShowClass = 'form__message';
 					this.error = this.errors.showError('noData');
@@ -140,6 +145,14 @@ export class WeatherComponent implements OnDestroy {
 			}
 		}
 	}
+
+    changeIconClass(): void {
+        if (this.isClear) {
+            this.iconClass = 'rotate';
+        } else {
+            this.iconClass = 'slide';
+        }
+    }
 
 	ngOnDestroy = (): void => {
 		this.dataSubscription.unsubscribe();

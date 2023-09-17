@@ -8,13 +8,12 @@ export class ShowErrorsService {
 	error: string = '';
 
 	errorMessages: Errors = {
-		emptyInput: 'Podaj nazwę miejscowości i wyszukaj.',
-		noData:
-			'Niestety tej miejscowości nie znaleziono, wpisz inną i wyszukaj ponownie.',
-		serverErr: 'Przepraszamy, coś poszło nie tak. Spróbuj wyszukać ponownie',
-		geolocationErr:
-			'Przepraszamy, ale Twoja przglądarka nie obsługuje geolokalizacji, wpisz nazwę miejscowości i wyszukaj ponownie',
-		default: 'Przepraszamy, wystąpił jakiś błąd. Spróbuj ponownie.',
+		emptyInput: 'Enter the name of the town/city and search',
+		noData: 'Unfortunately, this town/city was not found. Please enter another one and search again',
+		serverErr: 'There is an issue with a search or request, please try your search again later.',
+		geolocationErr: 'Sorry, but your browser does not support geolocation. Please enter the name of the town/city and search again',
+		noContent: 'No such location found, please try with a valid location',
+		default: 'Sorry, an error occurred. Please try again.',
 	};
 
 	problemCode!: string;
@@ -35,6 +34,10 @@ export class ShowErrorsService {
 
 			case 'noGeo':
 				return (this.error = this.errorMessages.geolocationErr);
+				break;
+
+			case 'noContent':
+				return (this.error = this.errorMessages.noContent);
 				break;
 
 			default:

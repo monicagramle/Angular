@@ -33,10 +33,6 @@
 	}
 
 	&__logotype {
-		height: 40%;
-
-		@include desktopUp {
-			height: auto;
-		}
+		height: 50%;
 	}
 }
